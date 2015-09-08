@@ -1,0 +1,100 @@
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:500,400,100|Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div id="big-title">Katherine Chao</div>
+		<div id="small-title">
+			<span id="developer-link"><a href="#">developer</a></span>,
+			<span id="artist-link"><a href="#">artist</a></span>,
+			<span id="trotter-link"><a href="#">globe trotter</a></span>, &
+			<span id="human-link"><a href="#">friendly human</a></span>
+		</div>
+
+		<div id="content">
+			<!-- Developer Tab -->
+			<div id="developer-content">
+				Along with my formal studies in Computer Science, I've been coding for fun since about age 11. Check out my personal projects listed below!
+
+				<div class="divider">&nbsp;</div>
+
+				<div class="project-content">
+					<div class="left">
+						<h3>The Silver Islands</h3>
+						<div class="info stack">Django</div>
+						<div class="info view"><a href="http://silver-islands.com/" target="_blank">View</a></div>
+						<div class="info pencil"><a href="https://github.com/kchao1994/poke" target="_blank">Source Code</a></div>
+					</div>
+					<div class="right">
+						Pokemon art website that I develop in my free time (although these days that happens far too rarely). I created it in 2006 and have maintained the site since and it is the root of my interest in computers and coding.
+					</div>
+				</div>
+				
+				<div class="divider">&nbsp;</div>
+				
+				<div class="project-content">
+					<div class="left">
+						<h3>Stopwatch</h3>
+						<div class="info stack">Javascript</div>
+						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
+					</div>
+					<div class="right">
+						A simple web based stopwatch, one that counts up and one that counts down.
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Artist Tab -->
+			<div id="artist-content">
+				I've also been known to draw in my free time. <a href="#">Visit my art blog</a>, where I upload sketches and completed works, or view some samples.
+			</div>
+
+			<!-- Friendly Human Tab -->
+			<div id="human-content">
+				Interested in reaching out to me? Refer to the links below!
+					<div class="info email">Email: <a href="mailto:kchao1994@gmail.com">kchao1994@gmail.com</a></div>
+					<div class="info github">Github: <a href="https://github.com/kchao1994" target="_blank">kchao1994</a></div>
+					<div class="info linkedin"><a href="www.linkedin.com/pub/katherine-chao/85/872/31/" target="_blank">Linkedin</a></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		$("#content").hide();
+
+		$("#developer-link").click(function() {
+			$("#content").show();
+			$("#developer-content").show();
+			$("#artist-content").hide();
+			$("#human-content").hide();
+		});
+
+		$("#artist-link").click(function() {
+			$("#content").show();
+			$("#artist-content").show();
+			$("#developer-content").hide();
+			$("#human-content").hide();
+		});
+
+		$("#human-link").click(function() {
+			$("#content").show();
+			$("#human-content").show();
+			$("#developer-content").hide();
+			$("#artist-content").hide();
+		});
+	</script>
+
+</body>
+</html>
