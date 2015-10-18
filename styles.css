@@ -19,9 +19,17 @@ a:hover {
 
 #wrapper {
 	display: flex;
+	display: -webkit-flex;
+
 	flex-direction: column;
+	-webkit-flex-direction: column;
+
 	justify-content: center;
+	-webkit-justify-content: center;
+
 	align-items: center;
+	-webkit-align-items: center;
+
 	height: 100vh;
 	width: 100%;
 }
@@ -33,62 +41,89 @@ a:hover {
 	margin-top: 0px;
 }
 
+#header {
+	display: flex;
+	display: -webkit-flex;
+
+	flex-direction: column;
+	-webkit-flex-direction: column;
+
+	justify-content: center;
+	-webkit-justify-content: center;
+
+	align-items: center;
+	-webkit-align-items: center;
+
+	width: 100%;
+}
+
+#header-inner {
+	display: flex;
+	display: -webkit-flex;
+
+	flex-direction: column;
+	-webkit-flex-direction: column;
+
+	justify-content: center;
+	-webkit-justify-content: center;
+
+	align-items: center;
+	-webkit-align-items: center;
+
+	width: 100%;
+}
+
 #big-title {
 	font-size: 100px;
 	font-weight: 100;
 	cursor: default;
 	color: #000;
+	width: 100%;
+	text-align: center;
+
 }
 
 #small-title {
 	font-size: 20px;
 	font-weight: 100;
 	cursor: default;
+	background: #000;
+	color: #cdcdcd;
+	display: flex;
+	display: -webkit-flex;
+
+	flex-direction: row;
+	-webkit-flex-direction: row;
+
+	justify-content: center;
+	-webkit-justify-content: center;
+
+	padding: 5px 0px 5px 0px;
+	margin: -23px 20px 0px 20px;
+	width: 100%;
 }
 
 #content {
-	background: #f6f6f6;
+	background: #fff;
 	color: #4f4f4f;
 	padding: 15px;
-	width: 100vh;
+	width: 70%;
+	max-width: 600px;
 	font-family: 'Alegreya Sans', sans-serif;
 	font-size: 17px;
 	line-height: 160%;
+	/*
 	border: 1px solid #8d8d8d;
 	-moz-box-shadow:    inset 0 0 20px #c4c4c4;
    	-webkit-box-shadow: inset 0 0 20px #c4c4c4;
    	box-shadow:         inset 0 0 20px #c4c4c4;
-   	border-radius: 20px;
-   	margin: 20px 30px 20px 30px;
+   	*/
+   	border-bottom-left-radius: 20px;
+   	border-bottom-right-radius: 20px;
+   	margin: 0px 30px 20px 30px;
 }
 
 
-/* Colorful links */
-#developer-link a:link, #developer-link a:active, #developer-link a:visited {
-	color: #d34f4f;
-}
-
-#artist-link a:link, #artist-link a:active, #artist-link a:visited {
-	color: #4fd3a0;
-}
-
-#trotter-link a:link, #trotter-link a:active, #trotter-link a:visited {
-	color: #6a5edc;
-}
-
-#human-link a:link, #human-link a:active, #human-link a:visited {
-	color: #eb9e43;
-}
-
-#small-title a:link, #small-title a:active, #small-title a:visited {
-	-webkit-transition: color 0.3s; /* Safari */
-    transition: color 0.3s;
-    font-weight: 500;
-}
-
-#small-title a:hover {
-	color: #f4e42e;
-}
 
 /* content items */
 h3 {
@@ -143,3 +178,95 @@ h3 {
 .github { background: url(images/github.png) no-repeat left center; }
 .linkedin { background: url(images/linkedin.png) no-repeat left center; }
 .pencil { background: url(images/pencil.png) no-repeat left center; }
+
+.scrolling { /* Note #2 */
+    position: fixed;
+    top: 0;
+}
+
+/* Colorful links */
+#developer-link a:link, #developer-link a:active, #developer-link a:visited {
+	color: #d34f4f;
+}
+
+#artist-link a:link, #artist-link a:active, #artist-link a:visited {
+	color: #4fd3a0;
+}
+
+#trotter-link a:link, #trotter-link a:active, #trotter-link a:visited {
+	color: #6a5edc;
+}
+
+#human-link a:link, #human-link a:active, #human-link a:visited {
+	color: #eb9e43;
+}
+
+#small-title a:link, #small-title a:active, #small-title a:visited {
+	-webkit-transition: color 0.3s; /* Safari */
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+#small-title a:hover {
+	color: #fff;
+}
+
+.developer-background {
+	background-color: #ffdada;
+}
+
+
+.artist-background {
+	background-color: #b2f6e2;
+}
+
+
+.trotter-background {
+	background-color: #d6dbff;
+}
+
+.human-background {
+	background-color: #ffd7c9;
+}
+
+.big-title-padding {
+	padding-top: 100px;
+}
+
+.height-auto {
+	height: auto;
+}
+
+.sticky {
+     position: fixed;
+     top: 0px;
+ }
+
+/*
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {*/
+
+
+@media screen and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	#big-title {
+		font-size: 60px;
+	}
+	.big-title-padding {
+		padding-top: 0px;
+	}
+	#small-title {
+		flex-direction: row;
+		-webkit-flex-direction: row;
+		margin: -15px 20px 0px 20px;
+		font-size: 17px;
+	}
+
+	#content {
+		margin: 0px 0px 20px 0px;
+		padding: 15px 15px 15px 15px;
+		width: 95%;
+	}
+}

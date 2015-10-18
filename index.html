@@ -1,5 +1,6 @@
 <html>
 <head>
+	<title>Katherine Chao.com</title>
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:500,400,100|Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -7,18 +8,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="scripts/jquery.history.min.js"></script>
 
 </head>
 
 <body>
 
 	<div id="wrapper">
-		<div id="big-title">Katherine Chao</div>
-		<div id="small-title">
-			<span id="developer-link"><a href="#">developer</a></span>,
-			<span id="artist-link"><a href="#">artist</a></span>,
-			<span id="trotter-link"><a href="#">globe trotter</a></span>, &
-			<span id="human-link"><a href="#">friendly human</a></span>
+		<div id="header">
+			<div id="header-inner">
+				<div id="big-title">Katherine Chao</div>
+				<div id="small-title">
+					<span id="developer-link"><a href="#/developer">developer</a></span>,
+					<span id="artist-link"><a href="#/artist">artist</a></span>,
+					<span id="trotter-link"><a href="#/globetrotter">globe trotter</a></span>,& 
+					<span id="human-link"><a href="#/human">friendly human</a></span>
+				</div>
+			</div>
 		</div>
 
 		<div id="content">
@@ -53,11 +59,42 @@
 					</div>
 				</div>
 
+				<div class="divider">&nbsp;</div>
+				
+				<div class="project-content">
+					<div class="left">
+						<h3>Shooting Charmander</h3>
+						<div class="info stack">Action Script</div>
+						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
+					</div>
+					<div class="right">
+						A simple web based stopwatch, one that counts up and one that counts down.
+					</div>
+				</div>
+
+								<div class="divider">&nbsp;</div>
+				
+				<div class="project-content">
+					<div class="left">
+						<h3>Shooting Charmander</h3>
+						<div class="info stack">Action Script</div>
+						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
+					</div>
+					<div class="right">
+						A simple web based stopwatch, one that counts up and one that counts down.
+					</div>
+				</div>
+
 			</div>
 
 			<!-- Artist Tab -->
 			<div id="artist-content">
 				I've also been known to draw in my free time. <a href="#">Visit my art blog</a>, where I upload sketches and completed works, or view some samples.
+			</div>
+
+			<!-- Trotter Tab -->
+			<div id="trotter-content">
+				FUCK YES TRAVEL
 			</div>
 
 			<!-- Friendly Human Tab -->
@@ -71,30 +108,10 @@
 
 	</div>
 
-	<script>
-		$("#content").hide();
 
-		$("#developer-link").click(function() {
-			$("#content").show();
-			$("#developer-content").show();
-			$("#artist-content").hide();
-			$("#human-content").hide();
-		});
+	<script src="scripts/main.js"></script>
 
-		$("#artist-link").click(function() {
-			$("#content").show();
-			$("#artist-content").show();
-			$("#developer-content").hide();
-			$("#human-content").hide();
-		});
 
-		$("#human-link").click(function() {
-			$("#content").show();
-			$("#human-content").show();
-			$("#developer-content").hide();
-			$("#artist-content").hide();
-		});
-	</script>
 
 </body>
 </html>
