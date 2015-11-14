@@ -25,9 +25,11 @@ var contentDivs = [
 
 // art gallery
 var imageSrcs = [
+	
 	"art/spider.png",
 	"art/amsterdam.png",
 	"art/birdmask.png",
+	"art/china.png",
 	"art/mask.png",
     "art/underwater.png",
     "art/girl-watercolor4.png",
