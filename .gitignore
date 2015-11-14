@@ -1,0 +1,8 @@
+*.png
+*.jpg
+/images/
+.DS_Store
+/art/.DS_Store
+/images/.DS_Store
+/styles/.DS_Store
+/scripts/.DS_Store

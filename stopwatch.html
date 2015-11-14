@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<title>Stopwatch</title>
+		<script src="scripts/jquery.min.js"></script>
+		<style type="text/css">
+		body {
+			font-size: 20px;
+		}
+
+		input {
+			font-size: 20px;
+		}
+
+		.display {
+			cursor: default;
+			color: gray;
+		}
+
+		.display  span {
+			color: black;
+			font-size: 25px;
+			font-weight: bold;
+		}
+		</style>
+		
+		<script language="javascript" type="text/javascript">
+			//time constants
+			var secondsInMin = 60;
+			var secondsInHour = 60*secondsInMin;
+			var secondsInDay = 24*secondsInHour;
+		
+			//Class Timer
+			function Stopwatch(startTime, endTime) {
+				this.tick;
+				this.startTime = startTime;
+				this.endTime = endTime;
+				this.index = startTime;
+				
+				var time = 0;
+				var thisObject;
+				var displayDay;
+				var displayHour;
+				var displayMin;
+				var displaySec;
+				var startButton;
+				var resetButton;
+				var pauseButton;
+				
+				this.start = function() {
+					thisObject = this;
+					this.turnOn(this.resetButton);
+					this.turnOn(this.pauseButton);
+					this.turnOff(this.startButton);
+
+					thisObject.time = setInterval(function() {
+						thisObject.tick();
+						thisObject.display();
+		
+						if (thisObject.index == thisObject.endTime) {
+							thisObject.pause();
+							thisObject.turnOff(thisObject.startButton);
+							thisObject.turnOff(thisObject.pauseButton);
+						}
+					}, 1000);
+				};
+		
+				this.pause = function() {
+					clearInterval(this.time);
+					this.turnOn(this.startButton);
+				};
+				
+				this.reset = function() {
+					this.pause();
+					this.index = this.startTime;
+					this.display();
+					this.turnOn(this.startButton);
+					this.turnOff(this.pauseButton);
+					this.turnOff(this.resetButton);
+				};
+				
+				this.display = function() {
+					timeArr = this.calculateTime(this.index);
+
+					this.displayDay.text(timeArr[0]);
+					this.displayHour.text(timeArr[1]);
+					this.displayMin.text(timeArr[2]);
+					this.displaySec.text(timeArr[3]);
+				};
+				
+				//get days, hours, min, secs array from input seconds
+				this.calculateTime = function(seconds) {
+					var numDays = Math.floor(seconds / secondsInDay);
+					
+					var hoursInSeconds = (seconds % secondsInDay)
+					var numHours = Math.floor(hoursInSeconds / secondsInHour);
+					
+					var minsInSeconds = (hoursInSeconds % secondsInHour)
+					var numMins = Math.floor(minsInSeconds / secondsInMin);
+					
+					var numSecs = minsInSeconds % secondsInMin;
+					
+					return [numDays, numHours, numMins, numSecs];
+				};
+				
+				//turn on and off buttons
+				this.turnOn = function(button) {
+					button.attr("disabled", false);
+				};
+				
+				this.turnOff = function(button) {
+					button.attr("disabled", true);
+				};
+			};
+	</script>
+	</head>
+
+	<body>
+		<label for="countTarget">Input the number of seconds you would like to count: </label>
+		<input type="text" id="countTarget" value="10">
+	
+		<h1>Stopwatch 1 - Count Up</h1>
+		
+        <div class="display">
+			<span id="days1"></span> days, 
+			<span id="hours1"></span> hours, 
+			<span id="mins1"></span> minutes, 
+			<span id="secs1"></span> seconds elapsed
+		</div>
+		
+		<input type="button" id="start-button" value="Start">
+        <input type="button" id="pause-button" value="Pause" disabled>
+		<input type="button" id="reset-button" value="Reset" disabled>
+		
+		<script>
+			//Initializing the timer
+			var timeUp = new Stopwatch(0, $("#countTarget").val());
+			
+			//initialize display
+			timeUp.displayDay = $("#days1");
+			timeUp.displayHour = $("#hours1");
+			timeUp.displayMin = $("#mins1");
+			timeUp.displaySec = $("#secs1");
+			timeUp.startButton = $("#start-button");
+			timeUp.pauseButton = $("#pause-button");
+			timeUp.resetButton = $("#reset-button");
+			timeUp.displayDay.text(0);
+			timeUp.displayHour.text(0);
+			timeUp.displayMin.text(0);
+			timeUp.displaySec.text(0);
+			
+			//set tick function
+			timeUp.tick = function() {
+				timeUp.index = timeUp.index + 1;
+			};
+			
+			//Button controls
+			$("#start-button").click(function() { timeUp.start(); });
+			$("#pause-button").click(function() { timeUp.pause(); });
+			$("#reset-button").click(function() { timeUp.reset(); });
+		</script>
+
+		<h1>Stopwatch 2 - Count Down</h1>
+		
+        <div class="display">
+			<span id="days2"></span> days, 
+			<span id="hours2"></span> hours, 
+			<span id="mins2"></span> minutes, 
+			<span id="secs2"></span> seconds to go
+		</div>
+		
+		<input type="button" id="start-button2" value="Start">
+        <input type="button" id="pause-button2" value="Pause" disabled>
+		<input type="button" id="reset-button2" value="Reset" disabled>
+		
+		<script>
+			//Initializing the timer
+			var timeDown = new Stopwatch($("#countTarget").val(), 0);
+			
+			//initialize display
+			timeDown.displayDay = $("#days2");
+			timeDown.displayHour = $("#hours2");
+			timeDown.displayMin = $("#mins2");
+			timeDown.displaySec = $("#secs2");
+			timeDown.startButton = $("#start-button2");
+			timeDown.pauseButton = $("#pause-button2");
+			timeDown.resetButton = $("#reset-button2");
+			var timeStartArr = timeDown.calculateTime(timeDown.startTime);
+			timeDown.displayDay.text(timeStartArr[0]);
+			timeDown.displayHour.text(timeStartArr[1]);
+			timeDown.displayMin.text(timeStartArr[2]);
+			timeDown.displaySec.text(timeStartArr[3]);
+			
+			//set tick function
+			timeDown.tick = function() {
+				timeDown.index = timeDown.index - 1;
+			};
+			
+			//Button controls
+			$("#start-button2").click(function() { timeDown.start(); });
+			$("#pause-button2").click(function() { timeDown.pause(); });
+			$("#reset-button2").click(function() { timeDown.reset(); });
+			
+			//Resetting the time on input change
+			$("#countTarget").change(function() {
+				timeUp.reset();
+				timeUp.endTime = $("#countTarget").val();
+				
+				timeDown.startTime = $("#countTarget").val();
+				console.log(timeDown.index);
+				timeDown.reset();
+			});
+		</script>
+	</body>
+</html>

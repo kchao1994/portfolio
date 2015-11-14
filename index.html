@@ -6,10 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="styles/fonts.css">
 	<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
 
-	<script src="scripts/jquery.min.js"></script>
+	<!-- <script src="scripts/jquery-1.11.0.min.js"></script> -->
+	<script src="scripts/jquery.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
-	<script src="scripts/jquery.history.min.js"></script>
+	<!-- <script src="scripts/jquery.history.min.js"></script> -->
 
+	
+	<script type="text/javascript" src="scripts/jquery.history.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -22,87 +26,114 @@
 					<span id="developer-link"><a href="#/developer">developer</a></span>,
 					<span id="artist-link"><a href="#/artist">artist</a></span>,
 					<span id="trotter-link"><a href="#/globetrotter">globe trotter</a></span>,& 
-					<span id="human-link"><a href="#/human">friendly human</a></span>
+					<span id="human-link"><a href="#/contact">friendly human</a></span>
 				</div>
 			</div>
 		</div>
 
+
+
+
+
 		<div id="content">
+
 			<!-- Developer Tab -->
 			<div id="developer-content">
-				Along with my formal studies in Computer Science, I've been coding for fun since about age 11. Check out my personal projects listed below!
+				<p>My primary interest is in programming. Aside from my formal studies in computer science, a large part of my childhood was spent in front of the computer building/designing websites after stumbling upon the art form on accident at age 11 whilst browsing Pokemon fan content. Something clicked and and I am happy to say that coding has been a large part of my life since then.</p>
 
-				<div class="divider">&nbsp;</div>
+				<p>Most of my expertise is in web development, but I'm always looking for new ways to apply my talents! Check out my personal projects listed below, ranging from full-blown websites to small code snippets.</p>
 
+				<h3>Poisson Image Splicer</h3>
 				<div class="project-content">
 					<div class="left">
-						<h3>The Silver Islands</h3>
+						<div class="info stack">Flask</div>
+						<div class="info stack">Redis</div>
+						<div class="info view"><a href="/poisson" target="_blank">View</a></div>
+						<div class="info pencil"><a href="http://github.com/#TODO" target="_blank">Git Repo</a></div>
+					</div>
+					<div class="right">
+						A small web application inspired by a really fun homework assignment in my Image Processing class. I decided, upon conclusion of the class, to port the code from Matlab to Python and create a web interface for it using Flask.
+					</div>
+				</div>
+
+				<h3>The Silver Islands</h3>
+				<div class="project-content">
+					<div class="left">
 						<div class="info stack">Django</div>
 						<div class="info view"><a href="http://silver-islands.com/" target="_blank">View</a></div>
-						<div class="info pencil"><a href="https://github.com/kchao1994/poke" target="_blank">Source Code</a></div>
+						<div class="info pencil"><a href="http://github.com/#TODO" target="_blank">Git Repo</a></div>
 					</div>
 					<div class="right">
-						Pokemon art website that I develop in my free time (although these days that happens far too rarely). I created it in 2006 and have maintained the site since and it is the root of my interest in computers and coding.
+						Pokemon art website that I used to develop in my free time. I created it in 2006 and therefore represents the origin of my interest in computers and coding. From maintaining this website I've learned about design, ways to create interactive/useful content, SEO, how to manage a small community of ~100 members, and much, much more. I used to maintain it almost daily throughout middle school and high school, although sadly, since the beginning of college and beyong, it's fallen off my radar. I hope to one day restore it to its former glory, though.
 					</div>
 				</div>
-				
-				<div class="divider">&nbsp;</div>
-				
+
+				<h3>Stopwatch</h3>
 				<div class="project-content">
 					<div class="left">
-						<h3>Stopwatch</h3>
 						<div class="info stack">Javascript</div>
-						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
+						<div class="info view"><a href="stopwatch.html" target="_blank">View</a></div>
 					</div>
 					<div class="right">
-						A simple web based stopwatch, one that counts up and one that counts down.
+						A simple web based stopwatch, one that counts up and one that counts down, created as a way for me to break into Javascript.
 					</div>
 				</div>
 
-				<div class="divider">&nbsp;</div>
-				
+				<h3>Angry Charmander Shooting Game</h3>
 				<div class="project-content">
 					<div class="left">
-						<h3>Shooting Charmander</h3>
 						<div class="info stack">Action Script</div>
-						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
+						<div class="info stack">Flash CS4</div>
+						<div class="info view"><a href="angrycharmander.html" target="_blank">View</a></div>
 					</div>
 					<div class="right">
-						A simple web based stopwatch, one that counts up and one that counts down.
+						I wanted to explore animation and the art of creating Flash games. Using the helpful <a href="http://www.kongregate.com/labs" target="_blank">Kongregate shootorials</a> as reference, I created Shooting Charmander.
 					</div>
 				</div>
 
-								<div class="divider">&nbsp;</div>
-				
-				<div class="project-content">
-					<div class="left">
-						<h3>Shooting Charmander</h3>
-						<div class="info stack">Action Script</div>
-						<div class="info view"><a href="/stopwatch" target="_blank">View</a></div>
-					</div>
-					<div class="right">
-						A simple web based stopwatch, one that counts up and one that counts down.
-					</div>
-				</div>
+
+
 
 			</div>
+
 
 			<!-- Artist Tab -->
 			<div id="artist-content">
-				I've also been known to draw in my free time. <a href="#">Visit my art blog</a>, where I upload sketches and completed works, or view some samples.
+				<p>I've also been known to draw in my free time (although, sadly, this hobby has taken quite a nose dive since graduating high school). <a href="http://finished-eraser.tumblr.com" target="_blank">Visit my art blog</a>, where I upload sketches and completed works.</p>
+
+				<p>Also, the doodles on each page of the website were drawn by me! Here are some other samples of my artwork.</p>
+
+				<div id="art-display-container">
+					<div id="art-display-inner">
+						<ul id="images-list">
+
+						</ul>
+					</div>
+				</div>
 			</div>
+
+
 
 			<!-- Trotter Tab -->
 			<div id="trotter-content">
-				FUCK YES TRAVEL
+				<p>Traveling the world and interacting with people of all cultures is another large passion of mine. I wish to at some point maintain some kind of travel blog/journal which I will put a link to as soon as it comes to fruition!</p>
 			</div>
+
+
 
 			<!-- Friendly Human Tab -->
 			<div id="human-content">
-				Interested in reaching out to me? Refer to the links below!
-					<div class="info email">Email: <a href="mailto:kchao1994@gmail.com">kchao1994@gmail.com</a></div>
-					<div class="info github">Github: <a href="https://github.com/kchao1994" target="_blank">kchao1994</a></div>
-					<div class="info linkedin"><a href="www.linkedin.com/pub/katherine-chao/85/872/31/" target="_blank">Linkedin</a></div>
+				<p>Please refer to the links below if you're interested in reaching out to me for any reason!</p>
+
+				<div class="info email">Email: <a href="mailto:kchao1994@gmail.com">kchao1994@gmail.com</a></div>
+				<div class="info github">Github: <a href="https://github.com/kchao1994" target="_blank">kchao1994</a></div>
+				<div class="info linkedin"><a href="www.linkedin.com/pub/katherine-chao/85/872/31/" target="_blank">Linkedin</a></div>
+
+				<br />
+
+				<p>Also of revelance is my <a href="resume.pdf" target="_blank">resume</a>.</p>
+
+
 			</div>
 		</div>
 
